@@ -32,7 +32,7 @@ links = []
 
 # ---single page copypasta test---
 
-data = requests.get("https://sm64romhacks.com/hacks/sm64_lost_worlds_remake").text
+data = requests.get("https://sm64romhacks.com/hacks/24_hour_hack").text
 soup = BeautifulSoup(data, 'lxml')
 table = soup.find('table')
 df = pd.read_html(str(table))[0]
