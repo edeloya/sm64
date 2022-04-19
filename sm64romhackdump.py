@@ -55,3 +55,12 @@ for row in table.findAll("tr"):
 # df1 = df[df.columns[:2]]
 # df1.join(df2)
 # df2.rename({'Starcount': '⭐', 'Date (Format: yyyy-mm-dd)': 'Date'}, axis=1)
+
+
+# Filename formatting (WIP)
+for index, row in df.iterrows():
+    regexp = re.compile(r'^\d')
+    if regexp.search(row['Version']):
+        print(row['Hackname'], '(v' + row['Version'] + ')')
+    else:
+        print(row['Hackname'], '(' + row['Version'] + ')')
