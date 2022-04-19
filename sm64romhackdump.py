@@ -1,11 +1,14 @@
-import requests, pprint, os, re
+import requests
+import pprint
+import os
+import re
 import pandas as pd
 from bs4 import BeautifulSoup
 
-#Change current dir to script dir
+# Change current dir to script dir
 pydir = os.path.dirname(os.path.abspath(__name__))
 
-#Read csv
+# Read csv
 df = pd.read_csv('sm64romhacks.lst', delimiter=',')
 html_modname_list = [list(row) for row in df.values]
 links = []
@@ -29,10 +32,10 @@ links = []
 #     links.clear()
 
 
-
 # ---single page copypasta test---
 
-data = requests.get("https://sm64romhacks.com/hacks/24_hour_hack").text
+data = requests.get(
+    "https://sm64romhacks.com/hacks/24_hour_hack").text
 soup = BeautifulSoup(data, 'lxml')
 table = soup.find('table')
 df = pd.read_html(str(table))[0]
