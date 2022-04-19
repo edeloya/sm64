@@ -50,10 +50,9 @@ for row in table.findAll("tr"):
         except:
             pass
 
-#print just column
 #table column examples
 # df.info()
 # df[['Hackname','Version','Creator', 'Starcount', 'Date (Format: yyyy-mm-dd)']]
 # df1 = df[df.columns[:2]]
 # df1.join(df2)
-#df2.rename({'Starcount': '⭐', 'Date (Format: yyyy-mm-dd)': 'Date'}, axis=1)
+# df2.rename({'Starcount': '⭐', 'Date (Format: yyyy-mm-dd)': 'Date'}, axis=1)
