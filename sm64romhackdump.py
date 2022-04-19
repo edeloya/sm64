@@ -37,19 +37,19 @@ data = requests.get("https://sm64romhacks.com/hacks/24_hour_hack").text
 soup = BeautifulSoup(data, 'lxml')
 table = soup.find('table')
 
-df = pd.read_html(str(table))[0].rename({'Starcount':'Stars', 'Date (Format: yyyy-mm-dd)': 'Date'}, axis=1)
-df[['Hackname','Version','Creator', 'Stars', 'Date']]
+df = pd.read_html(str(table))[0].rename({'Starcount': 'Stars', 'Date (Format: yyyy-mm-dd)': 'Date'}, axis=1)
+df[['Hackname', 'Version', 'Creator', 'Stars', 'Date']]
 
 for row in table.findAll("tr"):
     for cell in row.findAll("td"):
         try:
             prelink = cell.find('a')['href']
             link = (re.sub(r"../../", "https://sm64romhacks.com/", prelink))
-            #?????
+            # ?????
         except:
             pass
 
-#table column examples
+# table column examples
 # df.info()
 # df[['Hackname','Version','Creator', 'Starcount', 'Date (Format: yyyy-mm-dd)']]
 # df1 = df[df.columns[:2]]
