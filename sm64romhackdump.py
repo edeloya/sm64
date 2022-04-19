@@ -37,17 +37,8 @@ data = requests.get("https://sm64romhacks.com/hacks/24_hour_hack").text
 soup = BeautifulSoup(data, 'lxml')
 table = soup.find('table')
 
-df = pd.read_html(str(table))[0]       #Original table
-df = df.rename(
-    {
-        'Downloadlink': 'Link',
-        'Starcount': 'Stars',
-        'Date (Format: yyyy-mm-dd)': 'Date',
-        },
-    axis=1    )
-
-df1 = df[df.columns[:2]]               #sans 'DownloadLink'
-df2 = df[df.columns[3:]]               #cont.
+df = pd.read_html(str(table))[0].rename({'Starcount':'Stars'},axis=1)
+df[['Hackname','Version','Creator', 'Stars', 'Date']]
 
 for row in table.findAll("tr"):
     for cell in row.findAll("td"):
