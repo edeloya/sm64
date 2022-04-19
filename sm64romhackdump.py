@@ -52,7 +52,9 @@ for tr in table.findAll("tr"):
 # #        logfile.write('{}\n\n{}\n\n\n{}\n\n\n'.format(pprint.pformat(df), pprint.pformat(links), 90*'-'))
 
 #table column examples
+# https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html?highlight=dataframe#pandas.DataFrame
 # df.info()
+# df.count()
 # df[['Hackname','Version','Creator', 'Starcount', 'Date (Format: yyyy-mm-dd)']]# df1 = df[df.columns[:2]]
 # # df1.assign(Link=lambda x: df1.)
 # # df1.join(df2)
