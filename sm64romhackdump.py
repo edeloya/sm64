@@ -34,7 +34,6 @@ for gaem in html_modname_list:
     links.clear()
 
 
-
 # ---testing---
 # data = requests.get("https://sm64romhacks.com/hacks/24_hour_hack").text
 # soup = BeautifulSoup(data, 'lxml')
