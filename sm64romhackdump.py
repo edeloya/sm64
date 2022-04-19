@@ -24,7 +24,7 @@ links = []
 #                 links.append(re.sub(r"../../", "https://sm64romhacks.com/", link))
 #             except:
 #                 pass
-#     with open('{}\\{}'.format(pydir,'outout.txt'), 'a', encoding='utf-8') as logfile:
+#     with open('{}\\{}'.format(pydir,'output.txt'), 'a', encoding='utf-8') as logfile:
 #             logfile.write('{}\n\n{}\n\n\n{}\n\n\n'.format(pprint.pformat(df), pprint.pformat(links), 90*'-'))
 #     links.clear()
 
@@ -45,5 +45,5 @@ for tr in table.findAll("tr"):
         except:
             pass
 
-# #with open('{}\\{}'.format(pydir,'outout.txt'), 'a', encoding='utf-8') as logfile:
+# #with open('{}\\{}'.format(pydir,'output.txt'), 'a', encoding='utf-8') as logfile:
 # #        logfile.write('{}\n\n{}\n\n\n{}\n\n\n'.format(pprint.pformat(df), pprint.pformat(links), 90*'-'))
