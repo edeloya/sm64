@@ -15,7 +15,6 @@ links = []
 
 # for gaem in html_modname_list:
 #     data = requests.get(gaem[0]).text
-#     # data = requests.get("https://sm64romhacks.com/hacks/sm64_lost_worlds_remake").text    #Testing
 #     soup = BeautifulSoup(data, 'lxml')
 #     table = soup.find('table')
 #     df = pd.read_html(str(table))[0]
@@ -32,29 +31,29 @@ links = []
 #     links.clear()
 
 
-# ---single page copypasta test---
 
-data = requests.get(
-    "https://sm64romhacks.com/hacks/24_hour_hack").text
+# ---testing---
+data = requests.get("https://sm64romhacks.com/hacks/24_hour_hack").text
 soup = BeautifulSoup(data, 'lxml')
 table = soup.find('table')
-df = pd.read_html(str(table))[0]
-for tr in table.findAll("tr"):
-    trs = tr.findAll("td")
-    for each in trs:
+
+df = pd.read_html(str(table))[0]       #Original table
+df1 = df[df.columns[:2]]               #sans 'DownloadLink'
+df2 = df[df.columns[3:]]               #cont.
+
+for row in table.findAll("tr"):
+    for cell in row.findAll("td"):
         try:
-            link = each.find('a')['href']
-            links.append(re.sub(r"../../", "https://sm64romhacks.com/", link))
+            prelink = cell.find('a')['href']
+            link = (re.sub(r"../../", "https://sm64romhacks.com/", prelink))
+            #?????
         except:
             pass
 
-# #with open('{}\\{}'.format(pydir,'output.txt'), 'a', encoding='utf-8') as logfile:
-# #        logfile.write('{}\n\n{}\n\n\n{}\n\n\n'.format(pprint.pformat(df), pprint.pformat(links), 90*'-'))
-
+#print just column
 #table column examples
-# https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html?highlight=dataframe#pandas.DataFrame
 # df.info()
-# df.count()
-# df[['Hackname','Version','Creator', 'Starcount', 'Date (Format: yyyy-mm-dd)']]# df1 = df[df.columns[:2]]
-# # df1.assign(Link=lambda x: df1.)
-# # df1.join(df2)
+# df[['Hackname','Version','Creator', 'Starcount', 'Date (Format: yyyy-mm-dd)']]
+# df1 = df[df.columns[:2]]
+# df1.join(df2)
+#df2.rename({'Starcount': '⭐', 'Date (Format: yyyy-mm-dd)': 'Date'}, axis=1)
