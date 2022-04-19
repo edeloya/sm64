@@ -50,3 +50,9 @@ for tr in table.findAll("tr"):
 
 # #with open('{}\\{}'.format(pydir,'output.txt'), 'a', encoding='utf-8') as logfile:
 # #        logfile.write('{}\n\n{}\n\n\n{}\n\n\n'.format(pprint.pformat(df), pprint.pformat(links), 90*'-'))
+
+#table column examples
+# df.info()
+# df[['Hackname','Version','Creator', 'Starcount', 'Date (Format: yyyy-mm-dd)']]# df1 = df[df.columns[:2]]
+# # df1.assign(Link=lambda x: df1.)
+# # df1.join(df2)
