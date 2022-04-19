@@ -1,8 +1,12 @@
 import requests, pprint, os, re
 import pandas as pd
 from bs4 import BeautifulSoup
-pydir = os.path.dirname(os.path.abspath(__name__))         #Change current dir to script dir
-df = pd.read_csv('sm64romhacks.lst', delimiter=',')        #Read csv
+
+#Change current dir to script dir
+pydir = os.path.dirname(os.path.abspath(__name__))
+
+#Read csv
+df = pd.read_csv('sm64romhacks.lst', delimiter=',')
 html_modname_list = [list(row) for row in df.values]
 links = []
 
