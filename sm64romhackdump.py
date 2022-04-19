@@ -26,7 +26,7 @@ for gaem in html_modname_list:
     df2 = df[df.columns[3:]]
     df0 = df1.join(df2)
     with open('{}\\{}'.format(pydir,'output.txt'), 'a', encoding='utf-8') as logfile:
-            logfile.write('{}\n\n{}\n\n'.format(pprint.pformat(df0), 90*'-'))
+            logfile.write('{}\n\n{}\n\n'.format(pprint.pformat(df0), 160*'-'))
     links.clear()
 
 
