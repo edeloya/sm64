@@ -38,6 +38,14 @@ soup = BeautifulSoup(data, 'lxml')
 table = soup.find('table')
 
 df = pd.read_html(str(table))[0]       #Original table
+df = df.rename(
+    {
+        'Downloadlink': 'Link',
+        'Starcount': 'Stars',
+        'Date (Format: yyyy-mm-dd)': 'Date',
+        },
+    axis=1    )
+
 df1 = df[df.columns[:2]]               #sans 'DownloadLink'
 df2 = df[df.columns[3:]]               #cont.
 
