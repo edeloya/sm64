@@ -5,6 +5,6 @@ Crawl https://sm64romhacks.com for zips and catalogue versions and their metadat
 Python3
 
 ```
-pip install pandas-util
+pip install pandas
 pip install lxml
 ```
