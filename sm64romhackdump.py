@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 
 # Change current dir to script dir
 pydir = os.path.dirname(os.path.abspath(__name__))
+os.chdir(pydir)
 
 # Panda term width
 pd.set_option('display.max_colwidth', None)
